@@ -1,0 +1,12 @@
+env: prod
+
+aws:
+  region: ap-south-1
+
+s3:
+  bronze_bucket: prod-bronze-bucket
+  silver_bucket: prod-silver-bucket
+
+api:
+  orders_url: "https://api.example.com/orders"
+  timeout: 30

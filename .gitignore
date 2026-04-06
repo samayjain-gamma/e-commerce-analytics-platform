@@ -11,3 +11,6 @@ wheels/
 
 
 .git
+
+logs/
+e_commerce_analytics_platform.egg-info/

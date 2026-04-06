@@ -1,0 +1,12 @@
+env: dev
+
+aws:
+  region: ap-south-1
+
+s3:
+  bronze_bucket: dev-bronze-bucket
+  silver_bucket: dev-silver-bucket
+
+api:
+  orders_url: "http://127.0.0.1:8000/orders"
+  timeout: 30
