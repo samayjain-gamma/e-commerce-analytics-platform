@@ -4,7 +4,9 @@ from pathlib import Path
 from typing import List
 
 from ecommerce_analytics.common.config import load_config
+from ecommerce_analytics.common.constants import BRONZE_PREFIX
 from ecommerce_analytics.common.logger import logger
+from ecommerce_analytics.common.s3 import S3Client
 from ecommerce_analytics.ingestion.api.client import APIClient
 from ecommerce_analytics.ingestion.api.schema import Order
 
@@ -69,3 +71,12 @@ class OrdersExtractor:
             json.dump([o.model_dump() for o in orders], f, default=str, indent=4)
 
         logger.info(f"Saved data to {file_path}")
+
+    def save_to_s3(self, orders):
+        s3_client = S3Client(env=self.config.env)
+        if not orders:
+            logger.warning("No order to upload")
+            return
+        data = [o.model_dump() for o in orders]
+
+        s3_client.upload_json(data, prefix=BRONZE_PREFIX)

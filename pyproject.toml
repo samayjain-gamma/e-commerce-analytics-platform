@@ -5,13 +5,14 @@ description = "E-commerce Analyticw Data platform"
 readme = "README.md"
 requires-python = ">=3.11,<=3.12"
 dependencies = [
-    "apache-airflow>=2.8,<3.0",
+    "apache-airflow>=3.1.8",
+    "awscli>=1.44.73",
     "boto3>=1.42.83",
     "confluent-kafka>=2.14.0",
     "pre-commit>=4.5.1",
     "psycopg2>=2.9.11",
     "pydantic>=2.12.5",
-    "uvicorn>=0.43.0",
+    "uvicorn>=0.37.0",
 ]
 
 

@@ -4,7 +4,7 @@ aws:
   region: ap-south-1
 
 s3:
-  bronze_bucket: dev-bronze-bucket
+  bronze_bucket: e-commerce-analytics-platform
   silver_bucket: dev-silver-bucket
 
 api:

@@ -5,6 +5,6 @@ if __name__ == "__main__":
     extractor = OrdersExtractor(env="dev")
 
     orders = extractor.fetch_orders()
-    extractor.save_locally(orders)
+    extractor.save_to_s3(orders)
 
     logger.info("Ingestion completed")
